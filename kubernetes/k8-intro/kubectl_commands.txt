@@ -1,0 +1,21 @@
+#CREATE A NAMESPACE
+kubectl create namespace flaskapi
+
+#Alternative version of creating namespace
+#kubectl apply -f flaskapi-namespace.yaml
+
+#set namespace as context
+kubectl config set-context --current --namespace=flaskapi
+
+#create controller and service
+kubectl apply -f flaskapi-controller.yaml
+kubectl apply -f flaskapi-service.yaml
+
+
+##To clean up
+#delete all from namespace
+kubectl delete all --all -n flaskapi
+
+#to view services running
+kubectl describe services flaskapi
+kubectl describe service flaskapi-service

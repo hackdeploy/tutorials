@@ -1,0 +1,7 @@
+
+#to build image go to root FlaskAPI directory in command prompt and run this.
+docker build -t "flaskapi" .
+
+
+#to run the docker image, using docker
+docker run --name flaskapi -ti -p 5888:5000 flaskapi:latest
